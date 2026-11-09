@@ -63,7 +63,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .btn.ghost{background:transparent;color:var(--navy)}
 .btn.ghost:hover{background:var(--sky)}
 .nav .btn{min-height:42px;padding:0 18px;font-size:.85rem}
-@media (max-width:820px){.nav ul{display:none}}
+@media (max-width:1000px){.nav ul{display:none}}
 
 /* hero */
 .hero .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center;padding-block:72px 56px}
@@ -93,8 +93,8 @@ section.band{background:var(--band)}
 .tally a{font-weight:600}
 
 /* solutions */
-.sols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-@media (max-width:980px){.sols{grid-template-columns:repeat(2,1fr)}}
+.sols{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media (max-width:1180px){.sols{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){.sols{grid-template-columns:1fr}}
 .swap{display:grid;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card);max-width:960px}
 .swap-row{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
@@ -216,6 +216,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
     <nav aria-label="Main"><ul>
       <li><a href="#plain">What is AI?</a></li>
       <li><a href="#solutions">What we do</a></li>
+      <li><a href="#savings">Save money</a></li>
       <li><a href="#services">Pricing</a></li>
       <li><a href="#how">How it works</a></li>
       <li><a href="#about">About</a></li>
@@ -230,7 +231,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <div class="copy">
         <span class="eyebrow">Built for the service industry, by the service industry</span>
         <h1>Get your evenings back from the paperwork.</h1>
-        <p class="lede">We set up simple tools that handle the office work for you: estimates, scheduling, payroll, invoices, supply orders and keeping your books. We use the programs you already have, and we teach your team how to use them.</p>
+        <p class="lede">We set up simple tools that handle the office work for you: estimates, scheduling, payroll, invoices, supply orders and keeping your books. We also build your website and help customers find you on Google. We use the programs you already have, and we teach your team how to use them.</p>
         <div class="cta">
           <a class="btn" href="#contact">Get a quote</a>
           <a class="btn ghost" href="#solutions">See what we do</a>
@@ -263,6 +264,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
           <label class="task"><input type="checkbox" id="t-inv" value="Sending invoices and collecting payment"> Sending invoices and collecting payment</label>
           <label class="task"><input type="checkbox" id="t-pay" value="Payroll"> Payroll</label>
           <label class="task"><input type="checkbox" id="t-books" value="Bookkeeping"> Bookkeeping</label>
+          <label class="task"><input type="checkbox" id="t-web" value="Keeping the website up and showing up on Google"> Keeping the website up and showing up on Google</label>
+          <label class="task"><input type="checkbox" id="t-subs" value="Paying for too many apps and services"> Paying for too many apps and services</label>
         </fieldset>
         <p class="tally" id="tally">We can take some or all of this off your plate. Check what applies and we'll start there.</p>
       </div>
@@ -325,11 +328,42 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
           <h3>Phone calls and follow-up</h3>
           <p>Missed calls get a text back, new leads get an answer fast, and past customers get a check-in when it's time for service again.</p>
         </article>
+        <article class="sol">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="M15.5 15.5L21 21"></path><path d="M10.5 7.5v6M7.5 10.5h6"></path></svg>
+          <h3>Getting found online</h3>
+          <p>Show up when people search Google, or ask AI tools like ChatGPT, for someone in your trade nearby. We tune your Google listing, website and reviews so the calls come to you. (You may have heard this called SEO and AEO.)</p>
+        </article>
+        <article class="sol">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"></rect><path d="M3 8h18M8 21h8M12 18v3"></path></svg>
+          <h3>Your website, built and kept up</h3>
+          <p>A clean website that works on phones and brings in calls. We keep it up to date for you, so you're not paying an agency every time you need a change.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="band" id="services">
+  <section class="band" id="savings">
+    <div class="wrap split">
+      <div class="head" style="margin:0">
+        <span class="eyebrow">Pay for less</span>
+        <h2>Our setup can pay for itself.</h2>
+        <p class="lede">Most service businesses pay for a pile of separate apps and outside services that don't talk to each other. When we set things up, we look for what you can cancel.</p>
+        <p class="lede">Cutting even one or two paid services can save thousands of dollars a year.</p>
+      </div>
+      <div class="proof">
+        <h3>Things we can help you replace or cut back:</h3>
+        <ul>
+          <li>Outside bookkeeping help</li>
+          <li>Customer management (CRM) software</li>
+          <li>Website and SEO companies</li>
+          <li>Scheduling and dispatch apps</li>
+          <li>Answering services</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
     <div class="wrap">
       <div class="head">
         <span class="eyebrow">Pricing</span>
@@ -341,7 +375,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
           <h3>Base package</h3>
           <div class="price">$3,500<small> – $8,000</small></div>
           <p>We sit down with you, figure out where your time goes, set up the right tools and teach your team to use them.</p>
-          <ul><li>Set up for the jobs you pick: scheduling, estimates, payroll, books, supplies and more</li><li>Works with the programs you already use</li><li>We train your team until they're comfortable</li></ul>
+          <ul><li>Set up for the jobs you pick: scheduling, estimates, payroll, books, supplies, website and more</li><li>We look for paid services you can cancel</li><li>Works with the programs you already use</li><li>We train your team until they're comfortable</li></ul>
         </article>
         <article class="plan">
           <h3>Monthly support plan</h3>
