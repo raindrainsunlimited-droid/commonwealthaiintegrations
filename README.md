@@ -3,7 +3,7 @@
 Single-page static site. No build step.
 
 - `index.html` — the whole site
-- `favicon.png`, `apple-touch-icon.png`, `logo-512.png` — icons (stand-in lighthouse seal until the final logo is added)
+- `favicon.png`, `apple-touch-icon.png`, `logo-512.png` — icons and `logo.webp` (the Commonwealth seal used on the page)
 - `vercel.json` — Vercel settings
 
 ## Deploy

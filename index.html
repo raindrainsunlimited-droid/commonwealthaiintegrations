@@ -52,7 +52,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--fg)}
 .brand-mark{width:44px;height:44px;flex:none}
-.hr-word{font-family:'Montserrat',sans-serif;font-weight:800;fill:#0B4F8A}
 .brand span{font-family:var(--display);font-weight:800;font-size:.92rem;letter-spacing:.04em;line-height:1.1}
 .brand small{display:block;font-weight:600;font-size:.68rem;letter-spacing:.16em;color:var(--sea)}
 .nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
@@ -71,7 +70,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .hero .cta{display:flex;flex-wrap:wrap;gap:12px}
 .hero .meta{font-size:.95rem;color:var(--muted)}
 .seal{justify-self:center;width:min(100%,360px);aspect-ratio:1;max-width:100%;border-radius:50%;box-shadow:0 24px 60px -24px rgba(11,79,138,.45);background:#fff;overflow:hidden}
-.seal svg{width:100%;height:100%;display:block}
+.seal img{width:100%;height:100%;display:block}
 @media (max-width:820px){.hero .wrap{grid-template-columns:1fr;padding-block:40px}.seal{width:min(70%,260px);order:-1}}
 
 .tide{display:block;width:100%;height:18px;color:var(--line)}
@@ -186,37 +185,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
 
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-<defs>
-<clipPath id="hr-disc"><circle cx="400" cy="400" r="226"></circle></clipPath>
-<path id="hr-arc-top" d="M 136 400 A 264 264 0 0 1 664 400"></path>
-<path id="hr-arc-bot" d="M 96 400 A 304 304 0 0 0 704 400"></path>
-<symbol id="hr-seal" viewBox="0 0 800 800">
-<circle cx="400" cy="400" r="335" fill="#FFFFFF" stroke="#0B4F8A" stroke-width="10"></circle>
-<circle cx="400" cy="400" r="232" fill="none" stroke="#0B4F8A" stroke-width="8"></circle>
-<text class="hr-word" font-size="54" letter-spacing="7"><textPath href="#hr-arc-top" startOffset="50%" text-anchor="middle">COMMONWEALTH</textPath></text>
-<text class="hr-word" font-size="46" letter-spacing="6"><textPath href="#hr-arc-bot" startOffset="50%" text-anchor="middle">AI INTEGRATIONS</textPath></text>
-<g fill="none" stroke="#0B4F8A" stroke-width="6" stroke-linecap="round"><path d="M 102 392 q 8 -9 16 0 t 16 0"></path><path d="M 102 410 q 8 -9 16 0 t 16 0"></path><path d="M 666 392 q 8 -9 16 0 t 16 0"></path><path d="M 666 410 q 8 -9 16 0 t 16 0"></path></g>
-<g clip-path="url(#hr-disc)">
-<rect x="160" y="160" width="480" height="480" fill="#BFE2F7"></rect>
-<polygon points="388,300 170,250 170,330" fill="#FFFFFF" opacity="0.65"></polygon>
-<polygon points="412,300 630,250 630,330" fill="#FFFFFF" opacity="0.65"></polygon>
-<g fill="#0B4F8A"><polygon points="368,478 432,478 416,336 384,336"></polygon><rect x="372" y="324" width="56" height="12" rx="2"></rect><rect x="382" y="284" width="36" height="40"></rect><polygon points="376,286 424,286 400,260"></polygon><circle cx="400" cy="254" r="6"></circle></g>
-<g fill="#FFFFFF"><polygon points="379,418 421,418 419,402 381,402"></polygon><polygon points="376,450 424,450 422.5,436 377.5,436"></polygon><rect x="389" y="291" width="22" height="26" rx="2"></rect></g>
-<rect x="398" y="291" width="4" height="26" fill="#0B4F8A"></rect>
-<path d="M 160 470 q 30 -16 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 L 640 640 L 160 640 Z" fill="#2F86C6"></path>
-<path d="M 160 500 q 30 -12 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 L 640 640 L 160 640 Z" fill="#1F6FAE"></path>
-<text x="400" y="586" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="800" font-size="80" letter-spacing="6" fill="#FFFFFF">AI</text>
-<line x1="346" y1="606" x2="454" y2="606" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"></line>
-<g fill="#FFFFFF"><circle cx="346" cy="606" r="6"></circle><circle cx="400" cy="606" r="6"></circle><circle cx="454" cy="606" r="6"></circle></g>
-</g>
-</symbol>
-</defs>
-</svg>
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Commonwealth AI Integrations, back to top">
-      <svg class="brand-mark" viewBox="0 0 800 800" aria-hidden="true"><use href="#hr-seal"></use></svg>
+      <img class="brand-mark" src="/logo.webp" alt="" width="44" height="44">
       <span>COMMONWEALTH<small>AI INTEGRATIONS</small></span>
     </a>
     <nav aria-label="Main"><ul>
@@ -244,7 +216,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         </div>
         <p class="meta">Face-to-face setup and training. No tech talk. Just less paperwork, from people you know by name.</p>
       </div>
-      <div class="seal"><svg viewBox="0 0 800 800" role="img" aria-label="Commonwealth AI Integrations logo: a lighthouse above the water with the letters AI"><use href="#hr-seal"></use></svg></div>
+      <div class="seal"><img src="/logo.webp" alt="Commonwealth AI Integrations logo: a Virginia outline above the letters AI" width="720" height="720"></div>
     </div>
   </section>
 
