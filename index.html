@@ -115,6 +115,14 @@ section.band{background:var(--band)}
 .plan{display:flex;flex-direction:column;gap:14px;padding:28px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
 .plan.feature{border:2px solid var(--navy)}
 .plan .tag{align-self:flex-start;font-family:var(--display);font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:var(--sky);padding:4px 10px;border-radius:999px}
+.plan>ul{flex:1;align-content:start}
+.value{display:grid;gap:8px;padding:16px 18px;border-radius:10px;background:var(--sky)}
+.value-label{font-family:var(--display);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sea)}
+.value ul{margin:0;padding-left:1.1em;display:grid;gap:6px;color:var(--fg);font-size:.98rem}
+.price-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding-top:6px;border-top:1px solid var(--line)}
+.price-row .price{padding-top:10px}
+.price-row .btn{margin-top:10px}
+.tag-quiet{background:transparent!important;border:1px solid var(--line);color:var(--muted)!important}
 .price{font-family:var(--display);font-weight:800;font-size:2rem;color:var(--navy);line-height:1;font-variant-numeric:tabular-nums}
 .price small{font-size:.9rem;font-weight:600;color:var(--muted)}
 .plan ul{margin:0;padding-left:1.1em;color:var(--muted);display:grid;gap:6px}
@@ -195,7 +203,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <li><a href="#plain">What is AI?</a></li>
       <li><a href="#solutions">What we do</a></li>
       <li><a href="#savings">Save money</a></li>
-      <li><a href="#services">Pricing</a></li>
+      <li><a href="#services">Plans</a></li>
       <li><a href="#how">How it works</a></li>
       <li><a href="#about">About</a></li>
     </ul></nav>
@@ -344,22 +352,44 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   <section id="services">
     <div class="wrap">
       <div class="head">
-        <span class="eyebrow">Pricing</span>
-        <h2>Two ways to work with us. Simple pricing.</h2>
+        <span class="eyebrow">Plans</span>
+        <h2>Less than one office hire. Built to pay for itself.</h2>
+        <p class="lede">You get hours back every week, and we help you cancel the paid apps and services you no longer need.</p>
       </div>
       <div class="plans">
         <article class="plan feature">
           <span class="tag">Where every project starts</span>
           <h3>Base package</h3>
-          <div class="price"><small>Starting at </small>$6,000</div>
           <p>We come to you, see where your time goes, set up the right tools and train your team in person.</p>
-          <ul><li>Set up for the jobs you pick: scheduling, estimates, payroll, books, supplies, website and more</li><li>We look for paid services you can cancel</li><li>Works with the programs you already use</li><li>Face-to-face training until your team is comfortable</li></ul>
+          <ul><li>Set up for the jobs you pick: scheduling, estimates, payroll, books, supplies, website and more</li><li>Works with the programs you already use</li><li>Face-to-face training until your team is comfortable</li></ul>
+          <div class="value">
+            <span class="value-label">Where you save</span>
+            <ul>
+              <li>We look for paid apps and services you can cancel, like a separate CRM, scheduling app, answering service or website company</li>
+              <li>One-time cost. For comparison, part-time office help at 20 hours a week and $20 an hour runs about $20,800 a year.</li>
+            </ul>
+          </div>
+          <div class="price-row">
+            <div class="price"><small>Starting at </small>$6,000</div>
+            <a class="btn" href="#contact">Book a free visit</a>
+          </div>
         </article>
         <article class="plan">
+          <span class="tag tag-quiet">Keeps it all running</span>
           <h3>Monthly support plan</h3>
-          <div class="price"><small>Starting at </small>$500<small>/mo</small></div>
           <p>We keep everything running and help when something comes up.</p>
           <ul><li>Regular check-ups to keep things working</li><li>New tools added as you grow</li><li>Call or text us with questions</li></ul>
+          <div class="value">
+            <span class="value-label">Where you save</span>
+            <ul>
+              <li>About $16 a day for a local team on call, instead of a help desk in another state</li>
+              <li>Fixes and new automations are included, so you're not paying by the hour for every change</li>
+            </ul>
+          </div>
+          <div class="price-row">
+            <div class="price"><small>Starting at </small>$500<small>/mo</small></div>
+            <a class="btn ghost" href="#contact">Ask about support</a>
+          </div>
         </article>
       </div>
       <p class="terms">50% deposit to start, balance due when the work is done. You get a written price before we start anything. Custom-built customer systems are priced separately.</p>
