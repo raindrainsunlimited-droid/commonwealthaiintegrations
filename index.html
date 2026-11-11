@@ -115,7 +115,7 @@ section.band{background:var(--band)}
 .plan{display:flex;flex-direction:column;gap:14px;padding:28px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
 .plan.feature{border:2px solid var(--navy)}
 .plan .tag{align-self:flex-start;font-family:var(--display);font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:var(--sky);padding:4px 10px;border-radius:999px}
-.plan>ul{flex:1;align-content:start}
+.plan .price-row{margin-top:auto}
 .value{display:grid;gap:8px;padding:16px 18px;border-radius:10px;background:var(--sky)}
 .value-label{font-family:var(--display);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sea)}
 .value ul{margin:0;padding-left:1.1em;display:grid;gap:6px;color:var(--fg);font-size:.98rem}
@@ -123,6 +123,12 @@ section.band{background:var(--band)}
 .price-row .price{padding-top:10px}
 .price-row .btn{margin-top:10px}
 .tag-quiet{background:transparent!important;border:1px solid var(--line);color:var(--muted)!important}
+.assess{display:grid;grid-template-columns:1fr 2fr;gap:16px;max-width:900px;margin-bottom:20px}
+@media (max-width:760px){.assess{grid-template-columns:1fr}}
+.assess-step{display:grid;gap:4px;align-content:start;padding:18px 20px;border-radius:12px;border:1px dashed var(--sea);background:var(--card)}
+.assess-step strong{font-family:var(--display);font-size:1.05rem}
+.assess-step span:last-child{color:var(--muted);font-size:.98rem}
+.assess-num{font-family:var(--display);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sea)}
 .price{font-family:var(--display);font-weight:800;font-size:2rem;color:var(--navy);line-height:1;font-variant-numeric:tabular-nums}
 .price small{font-size:.9rem;font-weight:600;color:var(--muted)}
 .plan ul{margin:0;padding-left:1.1em;color:var(--muted);display:grid;gap:6px}
@@ -207,7 +213,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <li><a href="#how">How it works</a></li>
       <li><a href="#about">About</a></li>
     </ul></nav>
-    <a class="btn" href="#contact">Get a quote</a>
+    <a class="btn" href="#contact">Book a free call</a>
   </div>
 </header>
 
@@ -219,7 +225,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         <h1>Get your evenings back from the paperwork.</h1>
         <p class="lede">We set up simple tools that handle the office work for you: estimates, scheduling, payroll, invoices, supply orders and keeping your books. We also build your website and help customers find you on Google. We use the programs you already have, and we teach your team how to use them.</p>
         <div class="cta">
-          <a class="btn" href="#contact">Get a quote</a>
+          <a class="btn" href="#contact">Book a free call</a>
           <a class="btn ghost" href="#solutions">See what we do</a>
         </div>
         <p class="meta">Face-to-face setup and training. No tech talk. Just less paperwork, from people you know by name.</p>
@@ -356,6 +362,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         <h2>Less than one office hire. Built to pay for itself.</h2>
         <p class="lede">You get hours back every week, and we help you cancel the paid apps and services you no longer need.</p>
       </div>
+      <div class="assess">
+        <div class="assess-step"><span class="assess-num">Step 1</span><strong>Free call</strong><span>See if we're a fit. No cost.</span></div>
+        <div class="assess-step"><span class="assess-num">Step 2</span><strong>On-site assessment · $1,500</strong><span>We visit, learn your business and give you a written plan with your final price. The full $1,500 is credited toward your base package.</span></div>
+      </div>
       <div class="plans">
         <article class="plan feature">
           <span class="tag">Where every project starts</span>
@@ -366,12 +376,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
             <span class="value-label">Where you save</span>
             <ul>
               <li>We look for paid apps and services you can cancel, like a separate CRM, scheduling app, answering service or website company</li>
-              <li>One-time cost. For comparison, part-time office help at 20 hours a week and $20 an hour runs about $20,800 a year.</li>
+              <li>Your $1,500 assessment is credited toward it. For comparison, part-time office help at 20 hours a week and $20 an hour runs about $20,800 a year.</li>
             </ul>
           </div>
           <div class="price-row">
             <div class="price"><small>Starting at </small>$6,000</div>
-            <a class="btn" href="#contact">Book a free visit</a>
+            <a class="btn" href="#contact">Book a free call</a>
           </div>
         </article>
         <article class="plan">
@@ -402,7 +412,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <h2 id="urgent-h">Every day you go without AI, your competitors pull further ahead.</h2>
       <p>Right now, other companies in your trade are calling leads back faster, sending estimates sooner and keeping their schedules tighter. Customers hire whoever gets back to them first. Every week you wait is another week of jobs going to the shop down the road.</p>
       <div class="cta">
-        <a class="btn light" href="#contact">Get my quote today</a>
+        <a class="btn light" href="#contact">Book my free call today</a>
         <a class="btn outline" href="#solutions">See what we do</a>
       </div>
     </div>
@@ -436,12 +446,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
     <div class="wrap">
       <div class="head">
         <span class="eyebrow">How it works</span>
-        <h2>Four simple steps.</h2>
+        <h2>Four simple steps, starting with a free call.</h2>
       </div>
       <ol class="steps">
-        <li><h3>We come to you</h3><p>We visit your office and your jobs to see how your business really runs.</p></li>
-        <li><h3>You get a price</h3><p>You get a written plan and price. You pick what to fix first.</p></li>
-        <li><h3>We set it up and train you</h3><p>We set everything up, test it, and train your team face to face.</p></li>
+        <li><h3>Free call</h3><p>A short call to learn about your business and see if we're a good fit. No cost, no pressure.</p></li>
+        <li><h3>On-site assessment</h3><p>We come to your office and your jobs, see how things really run, and give you a written plan with your final price. $1,500, and every dollar counts toward your build.</p></li>
+        <li><h3>We build it and train you</h3><p>We set everything up, test it, and train your team face to face.</p></li>
         <li><h3>We stick around</h3><p>We're a phone call away when you need help or want to add more.</p></li>
       </ol>
     </div>
@@ -498,7 +508,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <div>
         <span class="eyebrow">Get started</span>
         <h2 style="margin-top:12px">Tell us about your business.</h2>
-        <p class="lede" style="margin-top:14px">Share a few details and we'll call you to talk it through and put together a price.</p>
+        <p class="lede" style="margin-top:14px">Share a few details and we'll set up a free call to talk through your business. No cost, no pressure.</p>
         <dl class="details">
           <div><dt>Phone</dt><dd><span class="ph">[Phone]</span></dd></div>
           <div><dt>Email</dt><dd><span class="ph">[Email]</span></dd></div>
@@ -523,7 +533,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         </div>
         <div class="field"><label for="f-msg">What's eating up your time?</label><textarea id="f-msg" name="message"></textarea></div>
         <p id="f-err" class="sent" style="background:var(--ph-bg);color:var(--ph)" hidden>Add your name and a phone number or email so we can reach you.</p>
-        <button class="btn" type="submit">Get my quote</button>
+        <button class="btn" type="submit">Book my free call</button>
         <p id="f-ok" class="sent" hidden></p>
       </form>
     </div>
@@ -565,13 +575,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
     if(!name||!reach){err.textContent='Add your name and a phone number or email so we can reach you.';err.hidden=false;ok.hidden=true;return}
     err.hidden=true;
     var btn=form.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Sending…';
-    if(!FORM_ENDPOINT){err.textContent='Our online form isn\u2019t switched on yet. Please call or email us using the details on this page.';err.hidden=false;btn.disabled=false;btn.textContent='Get my quote';return}
+    if(!FORM_ENDPOINT){err.textContent='Our online form isn\u2019t switched on yet. Please call or email us using the details on this page.';err.hidden=false;btn.disabled=false;btn.textContent='Book my free call';return}
     fetch(FORM_ENDPOINT,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)})
       .then(function(r){ if(!r.ok) throw new Error(r.status);
         ok.textContent='Thanks, '+name.split(' ')[0]+'. We got your request and will be in touch within one business day.';
         ok.hidden=false; form.reset(); })
       .catch(function(){ err.textContent='That didn\u2019t go through. Please try again, or call or email us using the details on this page.'; err.hidden=false; })
-      .then(function(){ btn.disabled=false; btn.textContent='Get my quote'; });
+      .then(function(){ btn.disabled=false; btn.textContent='Book my free call'; });
   });
 })();
 </script>
