@@ -65,10 +65,17 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 @media (max-width:1000px){.nav ul{display:none}}
 
 /* hero */
-.hero .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center;padding-block:72px 56px}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center;padding-block:72px 56px}
 .hero .copy{display:grid;gap:22px;min-width:0}
 .hero .cta{display:flex;flex-wrap:wrap;gap:12px}
 .hero .meta{font-size:.95rem;color:var(--muted)}
+.vsl-wrap{display:grid;gap:14px;min-width:0}
+.vsl{position:relative;width:100%;max-width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:var(--navy-deep);box-shadow:0 24px 60px -24px rgba(11,79,138,.45)}
+.vsl iframe,.vsl video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vsl-placeholder{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:12px;color:#FFFFFF;font-family:var(--display);font-weight:700;letter-spacing:.04em}
+.vsl-placeholder svg{width:72px;height:72px;opacity:.9}
+.intake-btn{width:100%;min-height:54px;font-size:1.05rem}
+.vsl-note{font-size:.92rem;color:var(--muted);text-align:center}
 .seal{justify-self:center;width:min(100%,360px);aspect-ratio:1;max-width:100%;border-radius:50%;box-shadow:0 24px 60px -24px rgba(11,79,138,.45);background:#fff;overflow:hidden}
 .seal img{width:100%;height:100%;display:block}
 @media (max-width:820px){.hero .wrap{grid-template-columns:1fr;padding-block:40px}.seal{width:min(70%,260px);order:-1}}
@@ -190,6 +197,7 @@ form{display:grid;gap:14px;padding:28px;border-radius:14px;background:var(--card
 @media (max-width:520px){.row{grid-template-columns:1fr}}
 .field{display:grid;gap:6px;min-width:0}
 label{font-weight:600;font-size:.95rem}
+.opt{font-weight:400;color:var(--muted)}
 input,select,textarea{font:inherit;font-size:1rem;padding:11px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);width:100%;min-height:46px}
 textarea{min-height:120px;resize:vertical}
 .sent{padding:14px 16px;border-radius:8px;background:var(--sky);color:var(--fg);font-weight:600}
@@ -225,12 +233,23 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         <h1>Get your evenings back from the paperwork.</h1>
         <p class="lede">We set up simple tools that handle the office work for you: estimates, scheduling, payroll, invoices, supply orders and keeping your books. We also build your website and help customers find you on Google. We use the programs you already have, and we teach your team how to use them.</p>
         <div class="cta">
-          <a class="btn" href="#contact">Book a free call</a>
           <a class="btn ghost" href="#solutions">See what we do</a>
         </div>
         <p class="meta">Face-to-face setup and training. No tech talk. Just less paperwork, from people you know by name.</p>
       </div>
-      <div class="seal"><img src="/logo.webp" alt="Commonwealth AI Integrations logo: a Virginia outline above the letters AI" width="720" height="720"></div>
+      <div class="vsl-wrap">
+        <!-- VIDEO: replace the .vsl-placeholder div below with your video embed, e.g.
+             <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Commonwealth AI Integrations in 2 minutes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+             or a self-hosted file: <video src="/intro.mp4" controls playsinline poster="/intro-poster.jpg"></video> -->
+        <div class="vsl">
+          <div class="vsl-placeholder" role="img" aria-label="Video coming soon">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="3"></circle><path d="M26 20l18 12-18 12z" fill="currentColor"></path></svg>
+            <span>Video coming soon</span>
+          </div>
+        </div>
+        <a class="btn intake-btn" href="#contact">Fill out the intake form</a>
+        <p class="vsl-note">Takes about 2 minutes. We'll reach out to set up your free call.</p>
+      </div>
     </div>
   </section>
 
@@ -506,34 +525,47 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   <section class="contact" id="contact">
     <div class="wrap split">
       <div>
-        <span class="eyebrow">Get started</span>
+        <span class="eyebrow">Intake form</span>
         <h2 style="margin-top:12px">Tell us about your business.</h2>
-        <p class="lede" style="margin-top:14px">Share a few details and we'll set up a free call to talk through your business. No cost, no pressure.</p>
+        <p class="lede" style="margin-top:14px">Answer a few quick questions so we can come to your free call prepared. No cost, no pressure.</p>
         <dl class="details">
           <div><dt>Phone</dt><dd><span class="ph">[Phone]</span></dd></div>
           <div><dt>Email</dt><dd><span class="ph">[Email]</span></dd></div>
           <div><dt>Service area</dt><dd>Hampton Roads in person · anywhere in Virginia by phone and video</dd></div>
         </dl>
       </div>
-      <form id="lead" name="quote-request" method="POST" novalidate>
+      <form id="lead" name="intake" method="POST" novalidate>
+        <input type="hidden" id="f-drains" name="time_drains" value="">
         <p hidden><label>Leave this empty <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
+        <div class="field"><label for="f-goal">What's your main goal right now?</label>
+          <select id="f-goal" name="primary_goal" required>
+            <option value="">Choose one</option>
+            <option>Spend less time on paperwork and office work</option>
+            <option>Answer leads faster and win more jobs</option>
+            <option>Get scheduling and crews organized</option>
+            <option>Know my numbers: profit, costs and cash</option>
+            <option>Cut what I pay for software and outside services</option>
+            <option>Get found online and get more calls</option>
+            <option>Something else</option>
+          </select></div>
         <div class="row">
           <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
-          <div class="field"><label for="f-biz">Business name</label><input id="f-biz" name="business" autocomplete="organization"></div>
+          <div class="field"><label for="f-biz">Business name</label><input id="f-biz" name="business" autocomplete="organization" required></div>
         </div>
         <div class="row">
-          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
-          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
         </div>
+        <div class="field"><label for="f-web">Business website <span class="opt">(optional)</span></label><input id="f-web" name="website" type="url" inputmode="url" autocomplete="url" placeholder="yourbusiness.com"></div>
         <div class="row">
-          <div class="field"><label for="f-trade">Type of business</label>
-            <select id="f-trade" name="trade"><option value="">Choose one</option><option>Contractor</option><option>Landscaping</option><option>HVAC</option><option>Plumbing</option><option>Drainage or excavation</option><option>Cleaning</option><option>Electrical</option><option>Other</option></select></div>
-          <div class="field"><label for="f-size">Team size</label>
-            <select id="f-size" name="size"><option value="">Choose one</option><option>Just me</option><option>2–5</option><option>6–15</option><option>16–25</option><option>More than 25</option></select></div>
+          <div class="field"><label for="f-rev">Annual revenue</label>
+            <select id="f-rev" name="annual_revenue" required><option value="">Choose one</option><option>Under $250,000</option><option>$250,000 – $500,000</option><option>$500,000 – $1 million</option><option>$1 – 3 million</option><option>$3 – 10 million</option><option>Over $10 million</option></select></div>
+          <div class="field"><label for="f-size">Number of employees</label>
+            <select id="f-size" name="employees" required><option value="">Choose one</option><option>Just me</option><option>2–5</option><option>6–15</option><option>16–25</option><option>26–50</option><option>More than 50</option></select></div>
         </div>
-        <div class="field"><label for="f-msg">What's eating up your time?</label><textarea id="f-msg" name="message"></textarea></div>
-        <p id="f-err" class="sent" style="background:var(--ph-bg);color:var(--ph)" hidden>Add your name and a phone number or email so we can reach you.</p>
-        <button class="btn" type="submit">Book my free call</button>
+        <p id="f-err" class="sent" style="background:var(--ph-bg);color:var(--ph)" hidden></p>
+        <button class="btn" type="submit">Send my intake form</button>
+        <p class="vsl-note" style="text-align:left">Your details stay with us. We use them only to prepare for your call.</p>
         <p id="f-ok" class="sent" hidden></p>
       </form>
     </div>
@@ -551,18 +583,18 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
 (function(){
   var boxes=[].slice.call(document.querySelectorAll('#tasks input'));
   var tally=document.getElementById('tally');
-  var msg=document.getElementById('f-msg');
+  var drains=document.getElementById('f-drains');
   var base='We can take some or all of this off your plate. Check what applies and we’ll start there.';
   function update(){
     var picked=boxes.filter(function(b){return b.checked}).map(function(b){return b.value});
     if(!picked.length){tally.textContent=base;return}
     tally.innerHTML='';
     tally.appendChild(document.createTextNode(picked.length+(picked.length===1?' area':' areas')+' to work on. '));
-    var a=document.createElement('a');a.href='#contact';a.textContent='Add them to your quote request';
-    a.addEventListener('click',function(){msg.value='Biggest time drains: '+picked.join(', ')+'.'});
+    var a=document.createElement('a');a.href='#contact';a.textContent='Add them to your intake form';
+    a.addEventListener('click',function(){drains.value=picked.join(', ');});
     tally.appendChild(a);
   }
-  boxes.forEach(function(b){b.addEventListener('change',update)});
+  boxes.forEach(function(b){b.addEventListener('change',function(){update();drains.value=boxes.filter(function(x){return x.checked}).map(function(x){return x.value}).join(', ');})});
 
   // Paste your Formspree form address here (formspree.io → New form → copy the endpoint),
   // e.g. 'https://formspree.io/f/abcdwxyz'. Until it's set, the form asks visitors to call or email.
@@ -571,17 +603,22 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   var err=document.getElementById('f-err'), ok=document.getElementById('f-ok');
   form.addEventListener('submit',function(e){
     e.preventDefault();
-    var name=form.name.value.trim(), reach=form.phone.value.trim()||form.email.value.trim();
-    if(!name||!reach){err.textContent='Add your name and a phone number or email so we can reach you.';err.hidden=false;ok.hidden=true;return}
+    var labels={primary_goal:'your main goal',name:'your name',business:'your business name',email:'your email',phone:'your phone',annual_revenue:'annual revenue',employees:'number of employees'};
+    var missing=[];
+    Object.keys(labels).forEach(function(k){ if(!String(form[k].value||'').trim()) missing.push(labels[k]); });
+    if(missing.length){err.textContent='Please add '+missing.join(', ')+'.';err.hidden=false;ok.hidden=true;return}
+    if(form.email.validity && !form.email.validity.valid){err.textContent='Please check your email address.';err.hidden=false;ok.hidden=true;return}
+    var web=form.website.value.trim(); if(web && !/^https?:\/\//i.test(web)) form.website.value='https://'+web;
     err.hidden=true;
+    var name=form.name.value.trim();
     var btn=form.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Sending…';
-    if(!FORM_ENDPOINT){err.textContent='Our online form isn\u2019t switched on yet. Please call or email us using the details on this page.';err.hidden=false;btn.disabled=false;btn.textContent='Book my free call';return}
+    if(!FORM_ENDPOINT){err.textContent='Our online form isn\u2019t switched on yet. Please call or email us using the details on this page.';err.hidden=false;btn.disabled=false;btn.textContent='Send my intake form';return}
     fetch(FORM_ENDPOINT,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)})
       .then(function(r){ if(!r.ok) throw new Error(r.status);
-        ok.textContent='Thanks, '+name.split(' ')[0]+'. We got your request and will be in touch within one business day.';
+        ok.textContent='Thanks, '+name.split(' ')[0]+'. We got your intake form and will reach out within one business day to set up your free call.';
         ok.hidden=false; form.reset(); })
       .catch(function(){ err.textContent='That didn\u2019t go through. Please try again, or call or email us using the details on this page.'; err.hidden=false; })
-      .then(function(){ btn.disabled=false; btn.textContent='Book my free call'; });
+      .then(function(){ btn.disabled=false; btn.textContent='Send my intake form'; });
   });
 })();
 </script>
