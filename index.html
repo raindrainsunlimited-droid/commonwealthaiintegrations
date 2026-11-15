@@ -99,8 +99,14 @@ section.band{background:var(--band)}
 .tally a{font-weight:600}
 
 /* solutions */
-.sols{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-@media (max-width:1180px){.sols{grid-template-columns:repeat(2,1fr)}}
+.sol-group{display:grid;gap:16px}
+.sol-group+.sol-group{margin-top:40px}
+.group-title{font-family:var(--display);font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sea)}
+.sols{display:grid;gap:20px}
+.sols-3{grid-template-columns:repeat(3,1fr)}
+.sols-4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:1180px){.sols-4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:980px){.sols-3{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){.sols{grid-template-columns:1fr}}
 .swap{display:grid;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card);max-width:960px}
 .swap-row{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
@@ -246,7 +252,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <div class="copy">
         <span class="eyebrow">Built for the service industry, by the service industry</span>
         <h1>Get your evenings back from the paperwork.</h1>
-        <p class="lede">We set up simple tools that handle the office work for you: estimates, scheduling, payroll, invoices, supply orders and keeping your books. We also build your website and help customers find you on Google. We use the programs you already have, and we teach your team how to use them.</p>
+        <p class="lede">We set up simple tools that handle the office work for you: estimates, scheduling, payroll, invoices, supply orders and keeping your books. We also build your website, run your social media and ads, and help customers find you on Google. We use the programs you already have, and we teach your team how to use them.</p>
         <div class="cta">
           <a class="btn ghost" href="#solutions">See what we do</a>
         </div>
@@ -291,6 +297,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
           <label class="task"><input type="checkbox" id="t-pay" value="Payroll"> Payroll</label>
           <label class="task"><input type="checkbox" id="t-books" value="Bookkeeping"> Bookkeeping</label>
           <label class="task"><input type="checkbox" id="t-web" value="Keeping the website up and showing up on Google"> Keeping the website up and showing up on Google</label>
+          <label class="task"><input type="checkbox" id="t-social" value="Posting on social media and running ads"> Posting on social media and running ads</label>
           <label class="task"><input type="checkbox" id="t-subs" value="Paying for too many apps and services"> Paying for too many apps and services</label>
         </fieldset>
         <p class="tally" id="tally">We can take some or all of this off your plate. Check what applies and we'll start there.</p>
@@ -320,10 +327,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
     <div class="wrap">
       <div class="head">
         <span class="eyebrow">What we do</span>
-        <h2>We take care of the office work you already know.</h2>
+        <h2>We run the office work and help bring in the customers.</h2>
         <p class="lede">We build around how you already run things. No starting over with new software you don't want.</p>
       </div>
-      <div class="sols">
+      <div class="sol-group">
+        <h3 class="group-title">Run the office</h3>
+        <div class="sols sols-3">
         <article class="sol">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4M8 14h3M8 17h6"></path></svg>
           <h3>Scheduling and planning ahead</h3>
@@ -354,6 +363,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
           <h3>Phone calls and follow-up</h3>
           <p>Missed calls get a text back, new leads get an answer fast, and past customers get a check-in when it's time for service again.</p>
         </article>
+        </div>
+      </div>
+      <div class="sol-group">
+        <h3 class="group-title">Bring in more customers</h3>
+        <div class="sols sols-4">
         <article class="sol">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="M15.5 15.5L21 21"></path><path d="M10.5 7.5v6M7.5 10.5h6"></path></svg>
           <h3>Getting found online</h3>
@@ -364,6 +378,17 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
           <h3>Your website, built and kept up</h3>
           <p>A clean website that works on phones and brings in calls. We keep it up to date for you, so you're not paying an agency every time you need a change.</p>
         </article>
+        <article class="sol">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path><path d="M9 9.5l2 2 4-4"></path></svg>
+          <h3>Social media, done for you</h3>
+          <p>Regular posts that show off your work: before-and-after photos, happy customers, crews on the job. Led by Maddox, who built his own following past 400,000 people.</p>
+        </article>
+        <article class="sol">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h3l6 4V6L7 10z"></path><path d="M16.5 9a4 4 0 0 1 0 6M19 6.5a7.5 7.5 0 0 1 0 11"></path></svg>
+          <h3>Ads that bring in calls</h3>
+          <p>Facebook, Instagram and Google ads aimed at homeowners and businesses in your service area. We track every call and lead so you know exactly what your ad money brings back.</p>
+        </article>
+        </div>
       </div>
     </div>
   </section>
@@ -382,6 +407,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
           <li>Outside bookkeeping help</li>
           <li>Customer management (CRM) software</li>
           <li>Website and SEO companies</li>
+          <li>Social media and ad agencies</li>
           <li>Scheduling and dispatch apps</li>
           <li>Answering services</li>
         </ul>
@@ -580,6 +606,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
               <option>Know my numbers: profit, costs and cash</option>
               <option>Cut what I pay for software and outside services</option>
               <option>Get found online and get more calls</option>
+            <option>Get more customers from social media and ads</option>
               <option>Something else</option>
             </select></div>
           <div class="row">
