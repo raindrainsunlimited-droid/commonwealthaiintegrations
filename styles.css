@@ -387,3 +387,6 @@ main>section:first-of-type::before{content:"";position:absolute;inset:0;z-index:
 .save{align-self:flex-start;font-family:var(--display);font-size:.8rem;font-weight:700;color:#1f7a4d;background:rgba(31,122,77,.1);padding:4px 10px;border-radius:999px}
 :root[data-theme="dark"] .save{color:#7fd6a8;background:rgba(127,214,168,.12)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .save{color:#7fd6a8;background:rgba(127,214,168,.12)}}
+.proof-line{display:inline-block;margin:14px auto 0;padding:8px 16px;border-radius:999px;background:var(--sky);border:1px solid var(--line);font-size:.95rem;color:var(--fg)}
+.proof-line strong{color:var(--navy)}
+@media (max-width:600px){.proof-line{border-radius:12px;font-size:.9rem}}
