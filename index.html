@@ -36,20 +36,21 @@
   <section class="hero" style="padding:0">
     <div class="wrap">
       <div class="copy">
+        <img class="hero-seal" src="logo.webp" alt="" width="96" height="96">
         <span class="eyebrow">Built for the service industry, by the service industry</span>
-        <h1>Get your evenings back from the paperwork.</h1>
+        <h1>Get your evenings back from the <span class="mark">paperwork</span>.</h1>
         <p class="lede">Simple AI tools that take the office work off your plate.</p>
       </div>
       <div class="vsl-wrap">
         <!-- VIDEO: replace the .vsl-placeholder div below with your video embed, e.g.
              <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Commonwealth AI Integrations in 2 minutes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
              or a self-hosted file: <video src="/intro.mp4" controls playsinline poster="/intro-poster.jpg"></video> -->
-        <div class="vsl">
+        <div class="vsl-frame"><div class="vsl">
           <div class="vsl-placeholder" role="img" aria-label="Video coming soon">
             <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="3"></circle><path d="M26 20l18 12-18 12z" fill="currentColor"></path></svg>
             <span>Video coming soon</span>
           </div>
-        </div>
+        </div></div>
         <a class="btn intake-btn" href="#intake" data-intake>Fill out the intake form</a>
         <p class="vsl-note">Takes about 2 minutes. We'll reach out to set up your free call.</p>
       </div>
@@ -86,6 +87,7 @@
   <div class="intake-inner">
     <div class="intake-top">
       <div>
+        <img class="intake-seal" src="logo.webp" alt="" width="48" height="48">
         <span class="eyebrow">Intake form</span>
         <h2 id="intake-title">Tell us about your business.</h2>
         <p>About 2 minutes. No cost, no pressure.</p>
@@ -142,10 +144,32 @@
   </div>
 </dialog>
 
-<footer>
+<footer class="site-footer">
   <div class="wrap">
-    <span>© 2026 Commonwealth AI Integrations</span>
-    <span>Serving Hampton Roads, Virginia</span>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="logo.webp" alt="Commonwealth AI Integrations" width="72" height="72" loading="lazy">
+        <div>
+          <strong>Commonwealth AI Integrations</strong>
+          <span>Built for the service industry, by the service industry.</span>
+        </div>
+      </div>
+      <nav class="foot-col" aria-label="Footer">
+        <h2>Pages</h2>
+        <a href="index.html">Home</a><a href="ai.html">What is AI?</a><a href="industries.html">Industries</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a>
+      </nav>
+      <div class="foot-col">
+        <h2>Contact</h2>
+        <a href="tel:+17575358934">(757) 535-8934</a>
+        <a href="mailto:bryson@cwintegrations.ai">bryson@cwintegrations.ai</a>
+        <a href="mailto:maddox@cwintegrations.ai">maddox@cwintegrations.ai</a>
+        <a href="#intake" data-intake>Fill out the intake form</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Commonwealth AI Integrations</span>
+      <span>Serving Hampton Roads, Virginia</span>
+    </div>
   </div>
 </footer>
 
