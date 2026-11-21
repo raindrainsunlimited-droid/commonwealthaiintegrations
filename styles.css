@@ -153,6 +153,9 @@ dialog.intake::backdrop{background:rgba(8,30,52,.6)}
 dialog.intake form{padding:0;background:transparent}
 body.no-scroll{overflow:hidden}
 @media (max-width:520px){dialog.intake{width:calc(100vw - 16px);max-height:calc(100dvh - 16px)}.intake-inner{padding:20px}}
+.result{display:flex;align-items:center;gap:16px;padding:14px 18px;border-radius:12px;background:var(--sky);max-width:520px}
+.result-num{flex:none;font-family:var(--display);font-weight:800;font-size:1.9rem;line-height:1;color:var(--navy);font-variant-numeric:tabular-nums;white-space:nowrap}
+.result span:last-child{font-size:.98rem;color:var(--fg)}
 .price{font-family:var(--display);font-weight:800;font-size:2rem;color:var(--navy);line-height:1;font-variant-numeric:tabular-nums}
 .price small{font-size:.9rem;font-weight:600;color:var(--muted)}
 .plan ul{margin:0;padding-left:1.1em;color:var(--muted);display:grid;gap:6px}
