@@ -165,6 +165,7 @@ body.no-scroll{overflow:hidden}
 .results-3{grid-template-columns:repeat(3,1fr);max-width:none;gap:16px}
 @media (max-width:760px){.results-3{grid-template-columns:1fr}}
 .results-3 .result{padding:20px 22px}
+.results-note{margin-top:14px;color:var(--muted);max-width:70ch}
 .results-3 .result-num{font-size:2rem}
 .price{font-family:var(--display);font-weight:800;font-size:2rem;color:var(--navy);line-height:1;font-variant-numeric:tabular-nums}
 .price small{font-size:.9rem;font-weight:600;color:var(--muted)}
