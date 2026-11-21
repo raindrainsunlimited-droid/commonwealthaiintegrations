@@ -23,6 +23,7 @@
     <nav aria-label="Main"><ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="ai.html">What is AI?</a></li>
+      <li><a href="industries.html">Industries</a></li>
       <li><a href="services.html" aria-current="page">Services</a></li>
       <li><a href="pricing.html">Pricing</a></li>
       <li><a href="about.html">About</a></li>
@@ -172,6 +173,18 @@
             <option>Get more customers from social media and ads</option>
               <option>Something else</option>
             </select></div>
+          <div class="field"><label for="f-industry">What type of business do you run?</label>
+            <select id="f-industry" name="industry" required>
+              <option value="">Choose one</option>
+              <option value="Trade professional">Trade professional (plumbing, HVAC, contractors and more)</option>
+              <option value="Storefront business">Storefront business (retail, salon, auto shop, restaurant)</option>
+              <option value="Professional services">Professional services (accounting, insurance, real estate)</option>
+              <option value="Legal">Legal</option>
+              <option value="Health care">Health care</option>
+              <option value="Other">Other</option>
+            </select></div>
+          <input type="hidden" name="_subject" id="f-subject" value="New intake form">
+          <input type="hidden" name="page" id="f-page" value="">
           <div class="row">
             <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
             <div class="field"><label for="f-biz">Business name</label><input id="f-biz" name="business" autocomplete="organization" required></div>
