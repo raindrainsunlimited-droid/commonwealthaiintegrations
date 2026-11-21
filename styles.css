@@ -217,7 +217,9 @@ body.no-scroll{overflow:hidden}
 .details{display:grid;gap:14px;margin-top:28px}
 .details div{display:grid;gap:2px}
 .details dt{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-navy-muted);font-family:var(--display);font-weight:700}
-.details dd{margin:0;font-size:1.1rem}
+.details dd{margin:0;font-size:1.1rem;overflow-wrap:anywhere}
+.details .mail{color:var(--on-navy);text-underline-offset:3px}
+.details .mail:hover{color:#9FD0F2}
 form{display:grid;gap:14px;padding:28px;border-radius:14px;background:var(--card);color:var(--fg)}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media (max-width:520px){.row{grid-template-columns:1fr}}
