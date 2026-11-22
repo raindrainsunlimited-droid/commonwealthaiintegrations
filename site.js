@@ -14,9 +14,10 @@
   }
   boxes.forEach(function(b){b.addEventListener('change',function(){update();drains.value=boxes.filter(function(x){return x.checked}).map(function(x){return x.value}).join(', ');})});
 
-  // Paste your Formspree form address here (formspree.io → New form → copy the endpoint),
-  // e.g. 'https://formspree.io/f/abcdwxyz'. Until it's set, the form asks visitors to call or email.
-  var FORM_ENDPOINT='';
+  // Intake submissions are emailed to Maddox through FormSubmit (formsubmit.co).
+  // The first submission sends Maddox a one-time "Activate form" email; click it once and every
+  // submission after that lands in maddox@cwintegrations.ai.
+  var FORM_ENDPOINT='https://formsubmit.co/ajax/maddox@cwintegrations.ai';
   var dlg=document.getElementById('intake');
   function openIntake(e,src){ if(e) e.preventDefault(); var ind=(src&&src.getAttribute('data-industry'))||document.body.getAttribute('data-industry')||''; var sel=document.getElementById('f-industry'); if(sel&&ind&&!sel.value) sel.value=ind; if(!dlg.open){ try{dlg.showModal()}catch(_){dlg.setAttribute('open','')} document.body.classList.add('no-scroll'); setTimeout(function(){var g=document.getElementById('f-goal'); if(g) g.focus();},50);} }
   function closeIntake(){ if(dlg.open){ dlg.close?dlg.close():dlg.removeAttribute('open'); } }
@@ -43,7 +44,8 @@
     var btn=form.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Sending…';
     if(!FORM_ENDPOINT){err.textContent='Our online form isn\u2019t switched on yet. Please call or email us using the details on this page.';err.hidden=false;btn.disabled=false;btn.textContent='Send my intake form';return}
     fetch(FORM_ENDPOINT,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)})
-      .then(function(r){ if(!r.ok) throw new Error(r.status);
+      .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json().catch(function(){return {}}); })
+      .then(function(j){ if(j && String(j.success)==='false') throw new Error(j.message||'not sent');
         ok.textContent='Thanks, '+name.split(' ')[0]+'. We got your intake form and will reach out within one business day to set up your free call.';
         ok.hidden=false; form.reset(); })
       .catch(function(){ err.textContent='That didn\u2019t go through. Please try again, or call or email us using the details on this page.'; err.hidden=false; })
