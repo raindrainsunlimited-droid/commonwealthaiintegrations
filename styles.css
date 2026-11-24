@@ -434,3 +434,15 @@ main>section:first-of-type::before{content:"";position:absolute;inset:0;z-index:
 .person .headshot{display:block;width:100%;max-width:none;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;border-radius:14px;margin-bottom:10px;box-shadow:0 14px 30px rgba(11,40,70,.15)}
 .headshot-soon{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:var(--sky);border:1px dashed var(--line);box-shadow:none!important;color:var(--muted);font-size:.9rem}
 .headshot-soon img{width:96px;height:96px;opacity:.9}
+
+/* Who we help (home) */
+.who{padding:72px 0 8px}
+.who-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+@media (max-width:1000px){.who-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.who-grid{grid-template-columns:1fr}}
+.who-card{display:grid;gap:6px;padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--card);text-decoration:none;transition:transform .2s ease,border-color .2s ease}
+.who-card:hover{transform:translateY(-2px);border-color:var(--sea)}
+.who-card strong{font-family:var(--display);color:var(--fg)}
+.who-card span{font-size:.92rem;color:var(--muted)}
+.who-card strong::after{content:" \2192";color:var(--sea)}
+.who-card{align-content:start}
